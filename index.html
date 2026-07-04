@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[TÊN CỦA BẠN] — thuylds.id.vn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B1F;
+    --surface:#16262B;
+    --text:#E8EDE9;
+    --muted:#7C8F8C;
+    --amber:#E8A33D;
+    --teal:#5FA8A0;
+    --line:rgba(232,237,233,0.1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  body::before{
+    content:"";
+    position:absolute;top:-30%;right:-10%;
+    width:520px;height:520px;
+    background:radial-gradient(circle, rgba(232,163,61,0.08) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .card{
+    max-width:520px;
+    padding:0 28px;
+    text-align:left;
+  }
+  .status-line{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    color:var(--teal);
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--amber);
+    animation:pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.3;}
+  }
+  h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(32px,6vw,48px);
+    line-height:1.15;
+    margin-bottom:14px;
+  }
+  h1 span{color:var(--amber);}
+  .role{
+    font-size:16px;
+    color:var(--muted);
+    margin-bottom:32px;
+    line-height:1.6;
+  }
+  .links{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    padding:11px 20px;
+    border-radius:6px;
+    border:1px solid var(--line);
+    color:var(--text);
+    text-decoration:none;
+    transition:all .2s;
+    background:var(--surface);
+  }
+  .btn:hover{border-color:var(--teal);color:var(--teal);}
+  .btn.primary{
+    background:var(--amber);
+    color:var(--bg);
+    border-color:var(--amber);
+    font-weight:600;
+  }
+  .btn.primary:hover{background:#f0b256;color:var(--bg);}
+  footer{
+    position:absolute;
+    bottom:24px;left:0;right:0;
+    text-align:center;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--muted);
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="status-line">
+      <span class="dot"></span> đang xây dựng portfolio đầy đủ
+    </div>
+    <h1>[TÊN CỦA BẠN]<span>.</span></h1>
+    <p class="role">
+      Sinh viên Hệ thống Thông tin (Information Systems), đang trên hành trình trở thành Data Analyst.
+      Portfolio đầy đủ sắp ra mắt tại subdomain riêng.
+    </p>
+    <div class="links">
+      <a href="mailto:contact@thuylds.id.vn" class="btn primary">contact@thuylds.id.vn</a>
+      <a href="https://github.com/thuylds" target="_blank" class="btn">GitHub</a>
+      <!-- <a href="#" class="btn">LinkedIn</a> -->
+    </div>
+  </div>
+
+  <footer>© <span id="year"></span> [TÊN CỦA BẠN] · thuylds.id.vn</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
